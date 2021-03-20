@@ -8,10 +8,10 @@ app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+// serve static files
+app.use(express.static("public"));
+
 app.set("port", process.env.PORT || 5000);
-
-
-app.get('/', (req: express.Request, res: express.Response) => res.json('App start working Fine'))
 
 
 app.post('/sum', async (req: express.Request, res: express.Response) => {
